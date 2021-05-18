@@ -10,9 +10,11 @@ import UIKit
 
 // BASE URL
 #if DEBUG
-    let BASE_URL = "https://jsonplaceholder.typicode.com"
+  //set Debug Mode url
+  let BASE_URL = "https://jsonplaceholder.typicode.com"
 #else
-    //let BASE_URL = "https://jsonplaceholder.typicode.com"
+  //set Production Mode url
+  //let BASE_URL = "https://jsonplaceholder.typicode.com"
 #endif
 
 //API

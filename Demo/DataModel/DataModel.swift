@@ -47,16 +47,16 @@ class DataModel: APIBase {
     
     private func parseData(jsonDic: JSON?) {
         
-        let resultArray = jsonDic?["result"].array
+        let resultArray = jsonDic?[APIKey.result].array
         if let _resultArray = resultArray{
             self.dataArray = []
             
             for dataDic in _resultArray{
                 let data = Data()
-                data.id     = dataDic["id"    ].intValue
-                data.userId = dataDic["userId"].intValue
-                data.title  = dataDic["title" ].stringValue
-                data.isCompleted  = dataDic["completed" ].boolValue
+                data.id     = dataDic[APIKey.id].intValue
+                data.userId = dataDic[APIKey.userId].intValue
+                data.title  = dataDic[APIKey.title].stringValue
+                data.isCompleted  = dataDic[APIKey.completed].boolValue
                 dataArray?.append(data)
             }
         }

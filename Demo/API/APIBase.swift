@@ -5,7 +5,7 @@
 //  Created by Jamil on 18/5/21.
 //
 
-import Foundation
+//import Foundation
 import UIKit
 import Alamofire
 import SwiftyJSON
@@ -20,7 +20,6 @@ class APIBase {
     init() {
     
     }
-    
     
     //do request if params are inside of url request body
     func callAPIRequestWithJSONData(urlString: String, method: HTTPMethod, params: Parameters?, header: HTTPHeaders?, completion: @escaping(JSON?, NSError?) -> ()) {
@@ -86,9 +85,6 @@ class APIBase {
 
     // Header with Access Token
     func getHeaderWithAccessToken(params:Parameters?) -> [String:String] {
-        /*let _message = self.getQuery(params: params)
-        let result = try! HMAC(key: API_KEY, variant: .sha256).authenticate(_message.bytes)
-        return ["Authorization": "\(result.toHexString())"]*/
         return ["Authorization": ""]
     }
     

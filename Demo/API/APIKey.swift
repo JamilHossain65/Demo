@@ -8,6 +8,11 @@
 import UIKit
 
 struct APIKey {
-    //S
-    static let success = "success"
+    static let result = "result"
+    
+    //API RESPONSE KEY
+    static let id     = "id"
+    static let userId = "userId"
+    static let title  = "title"
+    static let completed = "completed"
 }
