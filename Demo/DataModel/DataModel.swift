@@ -16,7 +16,7 @@ class Data: NSObject {
 }
 
 class DataModel: APIBase {
-    static let sharedModel = DataModel()
+    //static let sharedModel = DataModel()
     //Resuest fields
     var userId : Int?
     
@@ -32,7 +32,7 @@ class DataModel: APIBase {
     
     func doDataRequest(completion: @escaping (Bool, ErrorModel?) -> ()) {
         let params:[String:Any] = [:]
-        let header = ["Authorization":""] //self.getHeaderWithAccessToken(params: params)
+        let header = ["Authorization":""]
         
         log("api data list :: \(API_DATA_LIST)")
         
@@ -55,7 +55,7 @@ class DataModel: APIBase {
                 let data = Data()
                 data.id     = dataDic[APIKey.id].intValue
                 data.userId = dataDic[APIKey.userId].intValue
-                data.title  = dataDic[APIKey.title].stringValue
+                data.title  = dataDic[APIKey.title ].stringValue
                 data.isCompleted  = dataDic[APIKey.completed].boolValue
                 dataArray?.append(data)
             }
