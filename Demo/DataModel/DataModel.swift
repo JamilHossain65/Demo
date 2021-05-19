@@ -36,7 +36,7 @@ class DataModel: APIBase {
         
         log("api data list :: \(API_DATA_LIST)")
         
-        let requestUrl = BASE_URL + API_DATA_LIST
+        let requestUrl = BASE_URL + API_DATA_LIST + "?\(APIKey.userId)=\(self.userId ?? 0)"
         APIBase.shared.callAPIRequestOutsideBodyForJSONData(urlString: requestUrl, method: .get, params: params, header: header) { (result, error) in
             if let _result = result {
                 self.parseData(jsonDic: _result)

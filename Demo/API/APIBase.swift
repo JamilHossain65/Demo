@@ -29,7 +29,9 @@ class APIBase {
             request.httpMethod = method.rawValue
             //request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
             request.httpBody = nil //jsonData
-            
+        
+            log("requestUrl :: \(request.url?.absoluteString)")
+        
             Alamofire.request(request).responseJSON { (response) in
                 
                 print("\n\(response)\n\n")
