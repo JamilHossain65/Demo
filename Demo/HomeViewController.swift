@@ -27,9 +27,6 @@ class HomeViewController: UIViewController {
 
     private func refreshUI() {
         loadViewIfNeeded()
-
-        log("refreshUI")
-        
     }
     
     override func viewDidLoad() {

@@ -39,9 +39,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 splitViewController.preferredDisplayMode = UISplitViewController.DisplayMode.allVisible
             })
             
-        //}else{
-            //guard let _ = (scene as? UIWindowScene) else { return }
-        //}
+//        }else{
+//            guard let _ = (scene as? UIWindowScene) else { return }
+//        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

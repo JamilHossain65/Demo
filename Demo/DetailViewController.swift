@@ -10,7 +10,6 @@ import UIKit
 class DetailViewController: UIViewController {
     @IBOutlet weak var detailTextLabel: UILabel!
     
-    //var selectedData = Data()
     var selectedData: Data? {
         didSet {
             refreshUI()
@@ -29,12 +28,6 @@ class DetailViewController: UIViewController {
         self.title = "Detail Data"
         refreshUI()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        detailTextLabel.text = "id: \(selectedData?.id ?? 0)\n userId: \(selectedData?.userId ?? 0)\n title: \(selectedData?.title ?? "")\n completed: \(selectedData?.isCompleted ?? false)"
-//    }
 }
 
 extension DetailViewController: DataSelectionDelegate {

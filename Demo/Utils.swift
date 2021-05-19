@@ -16,6 +16,7 @@ func log(_ msg: Any?) {
     #endif
 }
 
+//Fetch data from api for current page
 func fetchDataForPage(_ index:Int, completion: @escaping([Data]) -> ()) {
     //request api data from sever
     let dataModel = DataModel()
@@ -44,7 +45,6 @@ extension UIView{
     func hideProgressHUD(){
         MBProgressHUD.hide(for: self, animated: true)
     }
-    
 }
 
 
