@@ -7,14 +7,15 @@
 
 import UIKit
 
-//protocol MonsterSelectionDelegate: class {
-//  func monsterSelected(_ newMonster: String)
-//}
+protocol DataSelectionDelegate: class {
+  func didSelectedData(_ data: Data)
+}
 
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var refreshControl   = UIRefreshControl()
+    var refreshControl = UIRefreshControl()
+    weak var delegate  : DataSelectionDelegate?
     var dataArray:[Data] = []
     var currentPageIndex = 1
     
@@ -117,64 +118,17 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
         
         let selectedData = dataArray[indexPath.row]
         
-        let storyboard: UIStoryboard = UIStoryboard.init(name: "Main",bundle: nil);
-        let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        detailViewController.selectedData = selectedData
-        self.navigationController?.pushViewController(detailViewController, animated: true)
-    }
-}
-
-extension HomeViewController: UIScrollViewDelegate {
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        log("y=\(scrollView.contentOffset.y) == \(scrollView.contentSize.height)")
-//        if scrollView.contentOffset.y >= scrollView.contentSize.height {
-//            log("if")
-//            //scrollView.contentSize.height = -scrollView.contentOffset.y/2
-//            dataRefresh()
-//        } else {
-//            //scrollView.contentSize.height = 0
-//            //log("else")
-//        }
-//    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        let contentYoffset = scrollView.contentOffset.y
-        if(contentYoffset >= scrollView.contentSize.height/2 - 20) {
-            //log("======")
-            //dataRefresh()
+        if UIDevice.current.userInterfaceIdiom == .pad{
+            delegate?.didSelectedData(selectedData)
+            if let detailViewController = delegate as? DetailViewController,
+               let detailNavigationController = detailViewController.navigationController {
+                splitViewController?.showDetailViewController(detailNavigationController, sender: nil)
+            }
+        } else {
+            let storyboard: UIStoryboard = UIStoryboard.init(name: "Main",bundle: nil);
+            let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+            detailViewController.selectedData = selectedData
+            self.navigationController?.pushViewController(detailViewController, animated: true)
         }
     }
 }
-
-//class MasterViewController: UITableViewController {
-//  let monsters = [ "a","s" ]
-//
-//  weak var delegate: MonsterSelectionDelegate?
-//
-//  // MARK: - Table view data source
-//
-//  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//    return monsters.count
-//  }
-//
-//  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-//    let monster = monsters[indexPath.row]
-//    cell.textLabel?.text = "test"
-//    return cell
-//  }
-//
-//  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    let selectedMonster = monsters[indexPath.row]
-//    delegate?.monsterSelected(selectedMonster)
-//    if
-//      let detailViewController = delegate as? DetailViewController,
-//      let detailNavigationController = detailViewController.navigationController {
-//        splitViewController?.showDetailViewController(detailNavigationController, sender: nil)
-//    }
-//  }
-//}
-
-
-

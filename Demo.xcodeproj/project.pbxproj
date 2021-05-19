@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8A4ACB7DA1DD67E99FC2F298 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AEF0974D26B635898ADFDA /* Pods_Demo.framework */; };
-		8D5C1C092654E519000FCEB2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5C1C082654E519000FCEB2 /* MasterViewController.swift */; };
-		8D5C1C0C2654E541000FCEB2 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5C1C0B2654E541000FCEB2 /* Monster.swift */; };
 		8DC76B8F265424F00018D837 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC76B8E265424F00018D837 /* AppDelegate.swift */; };
 		8DC76B91265424F00018D837 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC76B90265424F00018D837 /* SceneDelegate.swift */; };
 		8DC76B93265424F00018D837 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC76B92265424F00018D837 /* HomeViewController.swift */; };
@@ -32,8 +30,6 @@
 		25945484BD0807FAB333FA54 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		3DB7E7E06AAA3B5598DF0EF2 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		46AEF0974D26B635898ADFDA /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D5C1C082654E519000FCEB2 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		8D5C1C0B2654E541000FCEB2 /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
 		8DC76B8B265424F00018D837 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC76B8E265424F00018D837 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DC76B90265424F00018D837 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,9 +98,7 @@
 				8DC76BB92654316F0018D837 /* Utils.swift */,
 				8DC76B8E265424F00018D837 /* AppDelegate.swift */,
 				8DC76B90265424F00018D837 /* SceneDelegate.swift */,
-				8D5C1C0B2654E541000FCEB2 /* Monster.swift */,
 				8DC76B92265424F00018D837 /* HomeViewController.swift */,
-				8D5C1C082654E519000FCEB2 /* MasterViewController.swift */,
 				8DC76BCF265448E10018D837 /* DetailViewController.swift */,
 				8DC76B94265424F00018D837 /* Main.storyboard */,
 				8DC76B97265424F10018D837 /* Assets.xcassets */,
@@ -280,14 +274,12 @@
 				8DC76BD0265448E10018D837 /* DetailViewController.swift in Sources */,
 				8DC76B8F265424F00018D837 /* AppDelegate.swift in Sources */,
 				8DC76BBA2654316F0018D837 /* Reachability.swift in Sources */,
-				8D5C1C0C2654E541000FCEB2 /* Monster.swift in Sources */,
 				8DC76BC02654316F0018D837 /* Utils.swift in Sources */,
 				8DC76BCB26543CDA0018D837 /* DataCell.swift in Sources */,
 				8DC76BBE2654316F0018D837 /* APIBase.swift in Sources */,
 				8DC76BBF2654316F0018D837 /* ErrorModel.swift in Sources */,
 				8DC76BBD2654316F0018D837 /* APIUrl.swift in Sources */,
 				8DC76B91265424F00018D837 /* SceneDelegate.swift in Sources */,
-				8D5C1C092654E519000FCEB2 /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
