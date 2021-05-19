@@ -19,8 +19,26 @@ class HomeViewController: UIViewController {
     var dataArray:[Data] = []
     var currentPageIndex = 1
     
+    var selectedData: Data? {
+        didSet {
+            refreshUI()
+        }
+    }
+
+    private func refreshUI() {
+        loadViewIfNeeded()
+
+        log("refreshUI")
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (self.splitViewController!.isCollapsed) {
+            let navController:UINavigationController = self.splitViewController!.viewControllers.first as! UINavigationController
+            navController.popToRootViewController(animated: false)
+        }
         
         //set header title
         self.title = "Data List"
