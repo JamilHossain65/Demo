@@ -8,7 +8,7 @@
 import UIKit
 
 protocol DataSelectionDelegate: class {
-  func didSelectedData(_ data: Data)
+    func didSelectedData(_ data: Data)
 }
 
 class HomeViewController: UIViewController {
@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
         registerCell()
         
         //Refresh data when user pull
-        dataRefresh()
+        refreshData()
         
         //add refresh controll to table view when user pull
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
@@ -44,37 +44,25 @@ class HomeViewController: UIViewController {
         tableView.addSubview(refreshControl)
     }
     
-    func dataRefresh() {
+    
+    func refreshData() {
         //request api data from sever
-        let dataModel = DataModel()
-        dataModel.userId = currentPageIndex
-        
         self.view.showProgressHUD()
-        dataModel.doDataRequest(completion: {(success,errorModel) in
+        fetchDataForPage(currentPageIndex, completion: { responseDataArray in
             self.view.hideProgressHUD()
-            if let _dataArray = dataModel.dataArray {
-                self.dataArray += _dataArray
-            }
+            
+            self.dataArray += responseDataArray
             
             self.currentPageIndex += 1
             self.refreshControl.endRefreshing()
             self.tableView.reloadData()
-            
-            /*
-            for data in dataModel.dataArray ?? [] {
-                log("\n id :\(String(describing: data.id))")
-                log("userId:\(String(describing: data.userId))")
-                log("title :\(String(describing: data.title))")
-                log("isCompleted:\(String(describing: data.isCompleted))")
-            }*/
-            
-            log("\n dataArray :\(String(describing: self.dataArray.count))")
+            log("\n data count :\(String(describing: self.dataArray.count))")
         })
     }
     
     @objc func refresh(_ sender: AnyObject) {
         //refresh table view
-        dataRefresh()
+        refreshData()
     }
 }
 

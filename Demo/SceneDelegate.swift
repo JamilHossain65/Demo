@@ -27,11 +27,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 fatalError()
             }
 
-            //let firstMonster = masterViewController.monsters.first
-            //detailViewController.monster  = firstMonster
-            masterViewController.delegate = detailViewController
-            detailViewController.navigationItem.leftItemsSupplementBackButton = true
-            detailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+            detailViewController.view.showProgressHUD()
+            fetchDataForPage(1, completion: { dataArray in
+                detailViewController.view.hideProgressHUD()
+                
+                detailViewController.selectedData  = dataArray.first
+                masterViewController.delegate = detailViewController
+                detailViewController.navigationItem.leftItemsSupplementBackButton = true
+                detailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+            })
+            
         }else{
             guard let _ = (scene as? UIWindowScene) else { return }
         }
@@ -64,7 +69,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 

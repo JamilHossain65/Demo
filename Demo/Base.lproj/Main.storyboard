@@ -74,13 +74,13 @@
         <!--Split View Controller-->
         <scene sceneID="16r-PT-hOb">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E13-k2-fBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <splitViewController id="nhF-14-481" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="JLx-Vq-elz" kind="relationship" relationship="masterViewController" id="ZNU-sa-3Mo"/>
-                        <segue destination="oVr-u8-wgG" kind="relationship" relationship="detailViewController" id="7aT-WF-Y6H"/>
+                        <segue destination="oVr-u8-wgG" kind="relationship" relationship="detailViewController" id="cEn-aF-EK2"/>
+                        <segue destination="JLx-Vq-elz" kind="relationship" relationship="masterViewController" id="0w6-ML-fkP"/>
                     </connections>
                 </splitViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E13-k2-fBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2000" y="43"/>
         </scene>

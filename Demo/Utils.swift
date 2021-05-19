@@ -16,6 +16,20 @@ func log(_ msg: Any?) {
     #endif
 }
 
+func fetchDataForPage(_ index:Int, completion: @escaping([Data]) -> ()) {
+    //request api data from sever
+    let dataModel = DataModel()
+    dataModel.userId = index
+    
+    //self.view.showProgressHUD()
+    dataModel.doDataRequest(completion: {(success,errorModel) in
+        //self.view.hideProgressHUD()
+        if let _dataArray = dataModel.dataArray {
+            completion(_dataArray)
+        }
+    })
+}
+
 //class Utils:NSObject{
 //
 //}
